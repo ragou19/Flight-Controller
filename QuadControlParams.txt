@@ -1,0 +1,83 @@
+############################## SLR SIMPLECONFIG ############################
+# this is a comment. [X] is a namespace. [X:Y] initializes X from Y
+# Namespace and parameter names are not case-sensitive
+# X=Y sets X to Y. Y may be a string, float, or list of 3 floats
+############################################################################
+
+[QuadControlParams] 
+
+UseIdealEstimator=1
+
+# Physical properties
+Mass = 0.49
+L = 0.17
+Ixx = 0.0023
+Iyy = 0.0023
+Izz = 0.0046
+kappa = 0.016
+minMotorThrust = .1
+maxMotorThrust = 4.5
+
+# Position control gains
+kpPosXY = 64
+kpPosZ = 64
+KiPosZ = 16.777216
+
+# Velocity control gains
+kpVelXY = 25
+kpVelZ = 25
+
+# Angle control gains
+kpBank = 8
+kpYaw = 2
+
+# Angle rate gains
+kpPQR = 82,95,10
+
+# limits
+maxAscentRate = 5
+maxDescentRate = 2
+maxSpeedXY = 5
+maxHorizAccel = 12
+maxTiltAngle = .7
+
+##############################################################
+# Use the area below to store defaults. DO NOT CHANGE THESE! #
+##############################################################
+
+[QuadControlParamsDefault]:[QuadControlParams] 
+
+UseIdealEstimator=1
+
+# Physical properties
+Mass = 0.4						# .49 is good
+L = 0.17						# .17 is good
+Ixx = 0.0023
+Iyy = 0.0023
+Izz = 0.0046
+kappa = 0.016
+minMotorThrust = .1
+maxMotorThrust = 4.5
+
+# Position control gains
+kpPosXY = 1						# 22 is good
+kpPosZ = 1						# 15 is good
+KiPosZ = 20						# 1 is good
+
+# Velocity control gains
+kpVelXY = 4						# 6.55 is good
+kpVelZ = 4						# 8 is good
+
+# Angle control gains
+kpBank = 5						# 10 is good
+kpYaw = 1						# 2 is good
+
+# Angle rate gains
+kpPQR = 23, 23, 5				# 82,82,5 is good
+
+# limits
+maxAscentRate = 5
+maxDescentRate = 2
+maxSpeedXY = 5
+maxHorizAccel = 12
+maxTiltAngle = .7
